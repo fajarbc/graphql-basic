@@ -1,28 +1,6 @@
-const Users = [
-  {
-    id: 1,
-    name: "Fajar",
-    active: true,
-    age: 25,
-  },
-  {
-    id: 2,
-    name: "Budi",
-    active: true,
-    weight: 60.0,
-  },
-  {
-    id: 3,
-    name: "Cahyanto",
-    active: false,
-  },
-  {
-    id: 4,
-    name: "Bece",
-    active: true,
-    age: 20,
-    weight: 54.3,
-  },
-];
+const low = require("lowdb");
+const FileSync = require("lowdb/adapters/FileSync");
 
-module.exports = { Users };
+const adapter = new FileSync("database.json");
+const db = low(adapter);
+module.exports = { db };

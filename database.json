@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Fajar",
+      "active": true,
+      "gender": "MALE",
+      "age": 25,
+      "following": [
+        {
+          "id": 2,
+          "name": "Budi",
+          "active": true,
+          "gender": "MALE",
+          "weight": 60
+        },
+        {
+          "id": 3,
+          "name": "Cahyanto",
+          "gender": "MALE",
+          "active": false
+        },
+        {
+          "id": 5,
+          "name": "Ani",
+          "active": true,
+          "gender": "FEMALE",
+          "age": 23
+        }
+      ],
+      "followers": [
+        {
+          "id": 5,
+          "name": "Ani",
+          "active": true,
+          "gender": "FEMALE",
+          "age": 23
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Budi",
+      "active": true,
+      "gender": "MALE",
+      "weight": 60,
+      "followers": [
+        {
+          "id": 1,
+          "name": "Fajar",
+          "active": true,
+          "gender": "MALE",
+          "age": 25
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cahyanto",
+      "gender": "MALE",
+      "active": false,
+      "followers": [
+        {
+          "id": 1,
+          "name": "Fajar",
+          "active": true,
+          "gender": "MALE",
+          "age": 25
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Bece",
+      "active": true,
+      "gender": "MALE",
+      "age": 20,
+      "weight": 54.3
+    },
+    {
+      "id": 5,
+      "name": "Ani",
+      "active": true,
+      "gender": "FEMALE",
+      "age": 23,
+      "followers": [
+        {
+          "id": 1,
+          "name": "Fajar",
+          "active": true,
+          "gender": "MALE",
+          "age": 25
+        }
+      ],
+      "following": [
+        {
+          "id": 1,
+          "name": "Fajar",
+          "active": true,
+          "gender": "MALE",
+          "age": 25
+        }
+      ]
+    }
+  ]
+}
