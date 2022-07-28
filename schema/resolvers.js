@@ -1,4 +1,4 @@
-const { db, follow, getUserById, getPostById, getUserPost, getMostLikedPost, getUserFollowers, getUserFollowing, getPostLikes, createUser } = require("../database");
+const { db, follow, getUserById, getPostById, getUserPost, getMostLikedPost, getUserFollowers, getUserFollowing, getPostLikes, createUser, updateUser } = require("../database");
 const fs = require("fs");
 
 const resolvers = {
@@ -26,6 +26,9 @@ const resolvers = {
   Mutation: {
     createUser: (_, args) => {
       return createUser(args.user)
+    },
+    updateUser: (_, args) => {
+      return updateUser(args.user)
     },
   },
   User: {

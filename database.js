@@ -12,9 +12,9 @@ const getUserById = (userId) => {
 };
 const follow = (userId1, userId2) => {
   // "u1" follows "u2"
-  const u1 = db.get("users").find({ id: Number(userId1) });
+  const u1 = db.get("users").find({ id: userId1 });
   const u1Val = { ...u1.value() };
-  const u2 = db.get("users").find({ id: Number(userId2) });
+  const u2 = db.get("users").find({ id: userId2 });
   const u2Val = { ...u2.value() };
   if (u1Val === undefined || u2Val === undefined) return null;
 
@@ -98,11 +98,25 @@ const getMostLikedPost = (userId) => {
 
 const createUser = (user) => {
     const users = db.get("users").value()
-    let id =1
-    if(users.length) id += users[users.length-1].id
-    const result = {id: id, ...user}
+    let id = 1
+    if(users.length) id += Number(users[users.length-1].id)
+    const result = {id: id.toString(), ...user}
     db.get("users").push(result).write()
     return result
+}
+
+const updateUser = (user) => {
+    const oldUser = db.get("users").find({id: user.id}).value()
+    // return oldUser
+    console.log(user);
+    const newUser = {...oldUser, ...user}
+    db.get("users")
+    .find({id: user.id})
+    .assign(newUser)
+    .write()
+    console.log(newUser);
+
+    return user
 }
 
 module.exports = {
@@ -116,4 +130,5 @@ module.exports = {
   getUserFollowing,
   getPostLikes,
   createUser,
+  updateUser,
 };
