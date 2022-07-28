@@ -7,35 +7,11 @@
       "gender": "MALE",
       "age": 25,
       "following": [
-        {
-          "id": 2,
-          "name": "Budi",
-          "active": true,
-          "gender": "MALE",
-          "weight": 60
-        },
-        {
-          "id": 3,
-          "name": "Cahyanto",
-          "gender": "MALE",
-          "active": false
-        },
-        {
-          "id": 5,
-          "name": "Ani",
-          "active": true,
-          "gender": "FEMALE",
-          "age": 23
-        }
+        5,
+        2
       ],
       "followers": [
-        {
-          "id": 5,
-          "name": "Ani",
-          "active": true,
-          "gender": "FEMALE",
-          "age": 23
-        }
+        5
       ]
     },
     {
@@ -45,29 +21,14 @@
       "gender": "MALE",
       "weight": 60,
       "followers": [
-        {
-          "id": 1,
-          "name": "Fajar",
-          "active": true,
-          "gender": "MALE",
-          "age": 25
-        }
+        1
       ]
     },
     {
       "id": 3,
       "name": "Cahyanto",
       "gender": "MALE",
-      "active": false,
-      "followers": [
-        {
-          "id": 1,
-          "name": "Fajar",
-          "active": true,
-          "gender": "MALE",
-          "age": 25
-        }
-      ]
+      "active": false
     },
     {
       "id": 4,
@@ -84,22 +45,10 @@
       "gender": "FEMALE",
       "age": 23,
       "followers": [
-        {
-          "id": 1,
-          "name": "Fajar",
-          "active": true,
-          "gender": "MALE",
-          "age": 25
-        }
+        1
       ],
       "following": [
-        {
-          "id": 1,
-          "name": "Fajar",
-          "active": true,
-          "gender": "MALE",
-          "age": 25
-        }
+        1
       ]
     }
   ],
@@ -109,29 +58,29 @@
       "type": "PHOTO",
       "url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png",
       "descrption": "Google Logo",
-      "user": {
-        "id": 1,
-        "name": "Fajar",
-        "active": true,
-        "gender": "MALE",
-        "age": 25
-      },
-      "likes": [
-        {
-          "id": 1,
-          "name": "Fajar",
-          "active": true,
-          "gender": "MALE",
-          "age": 25
-        },
-        {
-          "id": 5,
-          "name": "Ani",
-          "active": true,
-          "gender": "FEMALE",
-          "age": 23
-        }
-      ]
+      "user": 1
+    },
+    {
+      "id": 2,
+      "type": "PHOTO",
+      "url": "https://cdn.iconscout.com/icon/free/png-64/github-163-761603.png",
+      "descrption": "Github Logo",
+      "user": 5
+    },
+    {
+      "id": 3,
+      "type": "PHOTO",
+      "url": "https://cdn.iconscout.com/icon/free/png-64/gitlab-282507.png",
+      "descrption": "Gitlab Logo",
+      "user": 4
+    },
+    {
+      "id": 4,
+      "type": "PHOTO",
+      "url": "https://cdn.iconscout.com/icon/free/png-64/node-js-1174925.png",
+      "descrption": "NodeJS Logo",
+      "user": 1,
+      "likes": [2,3]
     }
   ]
 }

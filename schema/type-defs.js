@@ -10,6 +10,7 @@ const typeDefs = gql`
         weight: Float
         followers: [User!]
         following: [User!]
+        mostLikedPost: Post
     }
 
     type Post {
@@ -18,7 +19,8 @@ const typeDefs = gql`
         url: String!
         description: String
         user: User!
-        likes: [User!]
+        likes: [User!]!
+        likesCount: Int
     }
 
     input InputFollow {

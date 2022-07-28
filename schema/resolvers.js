@@ -1,4 +1,4 @@
-const { db, follow, getUserById, getPostById, getUserPost } = require("../database");
+const { db, follow, getUserById, getPostById, getUserPost, getMostLikedPost, getUserFollowers, getUserFollowing, getPostLikes } = require("../database");
 const fs = require("fs");
 
 const resolvers = {
@@ -23,6 +23,28 @@ const resolvers = {
       return getUserPost(args.userId)
     },
   },
+  User: {
+    followers: (user) => {
+      return getUserFollowers(user)
+    },
+    following: (user) => {
+      return getUserFollowing(user)
+    },
+    mostLikedPost: (user) => {
+      return getMostLikedPost(user.id)
+    }
+  },
+  Post: {
+    user: (post) => {
+      return getUserById(post.user)
+    },
+    likes: (post) => {
+      return getPostLikes(post.likes)
+    },
+    likesCount: (post) => {
+      return getPostLikes(post.likes).length
+    }
+  }
 };
 
 module.exports = { resolvers };
