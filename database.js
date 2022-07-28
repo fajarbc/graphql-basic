@@ -1,6 +1,5 @@
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
-// const { nanoid } = require("nanoid");
 
 const adapter = new FileSync("database.json");
 const db = low(adapter);
