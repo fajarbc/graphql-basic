@@ -22,8 +22,8 @@ const typeDefs = gql`
     }
 
     input InputFollow {
-        user_id1: ID!
-        user_id2: ID!
+        userId1: ID!
+        userId2: ID!
     }
 
     type Query {
@@ -32,7 +32,7 @@ const typeDefs = gql`
         follow(input: InputFollow!): User
         posts: [Post!]!
         post(id: ID!): Post!
-        user_posts(user_id: ID!): [Post!]!
+        userPosts(userId: ID!): [Post!]!
     }
 
     enum Gender {
