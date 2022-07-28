@@ -1,5 +1,5 @@
-#graphql-basic
-Learn GraphQL basics
+# graphql-basic
+Learn GraphQL basics using `apollo-server` and `lowdb` 
 
 # Clone
 ```bash
