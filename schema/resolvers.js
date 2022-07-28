@@ -35,6 +35,22 @@ const resolvers = {
 
       return u1.value();
     },
+    posts: () => {
+      return db.get("posts").value();
+    },
+    post: (_, args) => {
+      const Posts = db.get("posts").value();
+      const index = Posts.findIndex((post) => post.id == args.id);
+      return Posts[index];
+    },
+    user_posts: (_, args) => {
+      const Posts = db.get("posts").value();
+      let result = []
+      Posts.map((post) => {
+        if(post.user.id == args.user_id) result.push(post)
+      });
+      return result;
+    },
   },
 };
 

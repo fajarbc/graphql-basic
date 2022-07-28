@@ -8,8 +8,17 @@ const typeDefs = gql`
         gender: Gender!
         age: Int
         weight: Float
-        followers: [User]
-        following: [User]
+        followers: [User!]
+        following: [User!]
+    }
+
+    type Post {
+        id: ID!
+        type: PostType!
+        url: String!
+        description: String
+        user: User!
+        likes: [User!]
     }
 
     input InputFollow {
@@ -21,11 +30,19 @@ const typeDefs = gql`
         users: [User!]!
         user(id: ID!): User
         follow(input: InputFollow!): User
+        posts: [Post!]!
+        post(id: ID!): Post!
+        user_posts(user_id: ID!): [Post!]!
     }
 
     enum Gender {
         MALE,
         FEMALE,
+    }
+
+    enum PostType {
+        PHOTO,
+        VIDEO,
     }
 `;
 
