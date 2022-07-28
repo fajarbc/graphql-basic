@@ -1,5 +1,6 @@
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
+// const { nanoid } = require("nanoid");
 
 const adapter = new FileSync("database.json");
 const db = low(adapter);
@@ -95,6 +96,15 @@ const getMostLikedPost = (userId) => {
   return pinnedPost.length > 0 ? pinnedPost[pinnedPost.length - 1] : null;
 };
 
+const createUser = (user) => {
+    const users = db.get("users").value()
+    let id =1
+    if(users.length) id += users[users.length-1].id
+    const result = {id: id, ...user}
+    db.get("users").push(result).write()
+    return result
+}
+
 module.exports = {
   db,
   follow,
@@ -105,4 +115,5 @@ module.exports = {
   getUserFollowers,
   getUserFollowing,
   getPostLikes,
+  createUser,
 };

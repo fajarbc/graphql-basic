@@ -50,6 +50,28 @@
       "following": [
         1
       ]
+    },
+    {
+      "name": "Dedi",
+      "active": true,
+      "gender": "MALE",
+      "id": 6
+    },
+    {
+      "name": "Eni",
+      "active": true,
+      "gender": "FEMALE",
+      "age": 19,
+      "weight": 45,
+      "id": 7
+    },
+    {
+      "name": "Gigi",
+      "active": true,
+      "gender": "FEMALE",
+      "age": 25,
+      "weight": 50.4,
+      "id": 8
     }
   ],
   "posts": [
@@ -80,7 +102,10 @@
       "url": "https://cdn.iconscout.com/icon/free/png-64/node-js-1174925.png",
       "descrption": "NodeJS Logo",
       "user": 1,
-      "likes": [2,3]
+      "likes": [
+        2,
+        3
+      ]
     }
   ]
 }

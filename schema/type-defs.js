@@ -28,6 +28,14 @@ const typeDefs = gql`
         userId2: ID!
     }
 
+    input inputUser {
+        name: String!
+        active: Boolean = true
+        gender: Gender = MALE
+        age: Int
+        weight: Float
+    }
+
     type Query {
         users: [User!]!
         user(id: ID!): User
@@ -35,6 +43,10 @@ const typeDefs = gql`
         posts: [Post!]!
         post(id: ID!): Post!
         userPosts(userId: ID!): [Post!]!
+    }
+
+    type Mutation {
+        createUser(user: inputUser!): User!
     }
 
     enum Gender {
