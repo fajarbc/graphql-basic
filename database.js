@@ -80,21 +80,21 @@ const getPostLikes = (ids) => {
   return result;
 };
 const getMostLikedPost = (userId) => {
-    const Posts = getUserPost(userId);
-    let maxLike = 0;
-    let pinnedPost = [];
-    if (Posts.length)
-      Posts.map((post) => {
-        const likes = getPostLikes(post.likes).length;
-        if (likes > maxLike) {
-          maxLike = likes;
-          pinnedPost.push(post);
-        }
-      });
-  
-    return pinnedPost.length > 0 ? pinnedPost[pinnedPost.length - 1] : null;
-  };
-  
+  const Posts = getUserPost(userId);
+  let maxLike = 0;
+  let pinnedPost = [];
+  if (Posts.length)
+    Posts.map((post) => {
+      const likes = getPostLikes(post.likes).length;
+      if (likes > maxLike) {
+        maxLike = likes;
+        pinnedPost.push(post);
+      }
+    });
+
+  return pinnedPost.length > 0 ? pinnedPost[pinnedPost.length - 1] : null;
+};
+
 module.exports = {
   db,
   follow,
